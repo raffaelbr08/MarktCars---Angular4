@@ -1,0 +1,30 @@
+
+<section class="home">
+<app-logo></app-logo>
+
+    <h1 class="title">Bem vindo ao portal Markt Cars</h1>
+
+    <p class="left">Navegaçao:</p>  
+    <div class="menu-home">
+        <div class="ui-g">
+            <a [routerLink]="['/carros']"  class="ui-g-4 ui-md-4 ui-sm-12 ui-xs-12">
+                <div class="item-menu">
+                    <i class="fa fa-list-alt fa-3x" aria-hidden="true"></i>
+                    <p>Lista de Carros</p>            
+                </div>    
+            </a>
+            <a [routerLink]="['/cadastro']"  class="ui-g-4 ui-md-4 ui-sm-12 ui-xs-12">
+                <div class="item-menu">
+                    <i class="fa fa-user-plus fa-3x" aria-hidden="true"></i>
+                    <p>Cadastro</p>            
+                </div>    
+            </a>
+            <a  [routerLink]="['/']" class="ui-g-4 ui-md-4 ui-sm-6 ui-xs-12">
+                <div class="item-menu">
+                    <i class="fa fa-sign-out fa-3x" aria-hidden="true"></i>
+                    <p>Logout</p>            
+                </div>    
+            </a>
+        </div>       
+    </div>
+</section>

@@ -1,0 +1,101 @@
+.car{
+    width: 100%;
+    max-width: 400px;
+    min-height: 400px;
+    background: #0081BD;
+    border: solid 1px #0081BD;
+    border-radius: 6px;
+    color: white;
+    position: relative;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.car-image{
+    height:300px;
+}
+
+.car-image img{
+    border-radius:5px;
+}
+
+.cond-ipt{
+    background: white!important;
+    width: 100%;
+    color: black!important;
+    font-size: 15px!important;
+    max-width: 95px;
+}
+
+.condicao{
+    background:green;
+    padding:5px;
+    position:absolute;
+    top:0;
+    right:0;
+    font-size:20px;
+    font-weight: bold;
+    color:white;
+}
+
+.car-preco{
+    font-size:22px;
+    color:cadetblue;
+    background:white;
+    padding:5px;
+    border-radius:5px;
+    font-weight: bold;
+}
+
+.car-details{
+    text-align: center;
+    clear:both;
+}
+
+.car-buttons{
+   text-align:center;
+   margin:10px;
+}
+
+select{
+    width:100%;
+    max-width:50px;
+}
+
+input{
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #d4d4d4;  
+}
+
+.label-edit{
+    float:left;
+    margin-left:2px;
+    font-size:14px;
+    font-weight: bold;
+}
+
+.cor-carro-usado{
+    background:green;
+}
+.cor-carro-semi-novo{
+    background:#0081BD;
+}
+.cor-carro-usado{
+    background:red;
+}
+
+.btn-car{
+    background:#FF9D00;
+    border:none;
+    border-radius:5px;
+    padding:10px;
+    cursor:pointer;
+    color:white;
+    font-weight: bold;
+}
+
+.del {
+    background:red;
+}

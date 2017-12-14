@@ -1,0 +1,71 @@
+<app-logo></app-logo>
+<app-menu></app-menu>
+<h2>Formulario de Cadastro:</h2>
+<div class="container-cadastro">
+  
+  <form novalidate #formularioCadastro="ngForm" (ngSubmit)="cadastrarVeiculo(formularioCadastro)">
+    <h2>Registre um veiculo:</h2>
+
+    <div class="ui-g">
+      <div class="ui-g-6">
+        <label for="name">Modelo:</label>
+        <input type="text" name="nome" placeholder="Modelo" required ngModel #inputModelo="ngModel"><br>
+        <small class="error" *ngIf="!inputModelo.valid && inputModelo.touched">Campo obrigatório!</small>
+      </div>
+
+      <div class="ui-g-6">
+        <label for="preco">Preço:</label>
+        <input type="text" name="preco" placeholder="Preço" required ngModel #inputPreco="ngModel" kzMaskCurrency>   
+        <small class="error" *ngIf="!inputPreco.valid && inputPreco.touched">Campo obrigatório!</small>   
+      </div>
+
+      <div class="ui-g-4">
+          <label for="montadora">Fabricante:</label>
+          <select name="montadora" id="montadora" required ngModel #inputMontadora="ngModel">
+            <option [value]="fabri.id" *ngFor="let fabri of montadora">{{fabri.nome}}</option>
+          </select>
+          <small class="error" *ngIf="!inputMontadora.valid && inputMontadora.touched">Campo obrigatório!</small>   
+          
+      </div>
+      <div class="ui-g-4">
+        <label for="condicao">Condição:</label>
+        <select name="condicao" id="new" required ngModel #inputCondicao="ngModel">
+          <option value="Novo">Novo</option>
+          <option value="SemiNovo">Semi-Novo</option>
+          <option value="Usado">Usado</option>
+        </select>
+        <small class="error" *ngIf="!inputCondicao.valid && inputCondicao.touched">Campo obrigatório!</small>   
+        
+      </div>
+      <div class="ui-g-4">
+          <label for="name">Ano de Fabricação:</label>
+          <input type="text" name="anoFabricacao" placeholder="Modelo" ngModel required #inputFabricacao="ngModel" kzMask="99/99/9999">
+          <small class="error" *ngIf="!inputFabricacao.valid && inputFabricacao.touched">Campo obrigatório!</small>             
+      
+      </div>
+      <div class="ui-g-12">
+          <label for="name">Unico dono?</label>
+          <select name="unicoDono" id="" required ngModel #inputUnicoDono="ngModel">
+            <option value="true">Sim</option>
+            <option value="false">Não</option>            
+          </select>
+          <small class="error" *ngIf="!inputUnicoDono.valid && inputUnicoDono.touched">Campo obrigatório!</small>             
+      </div>
+
+      <div class="ui-g-12">
+          <label for="name">Imagem do veiculo:</label>
+          <input type="file" name="imagem" placeholder="Modelo">
+      </div>
+    </div>    
+
+    <div class="buttons-form">
+      <div class="ui-g">
+        <div class="ui-g-12">
+            <button type="submit" class="btn-enviar" [disabled]="!formularioCadastro.valid">Enviar</button>
+            <button class="btn-cancelar">Cancelar</button>
+        </div>        
+      </div>
+    </div>
+  </form>
+    
+</div>

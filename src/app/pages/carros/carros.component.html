@@ -1,0 +1,12 @@
+<app-logo></app-logo>
+<app-menu></app-menu>
+<h2>Listagem de Carros</h2>
+<div class="container-carros">
+    <div class="ui-g">
+        <div class="ui-g-4" *ngFor="let car of carrosService.listCars">            
+                <app-car [car]="car"></app-car>            
+        </div> 
+    </div>
+    
+
+</div>

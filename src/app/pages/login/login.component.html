@@ -1,0 +1,27 @@
+<section class="login">
+  <app-logo></app-logo>
+
+
+
+<p class="subtitle">Realize seu login para acessar:</p>
+
+  <form novalidate class="form" #formulario="ngForm" (ngSubmit)="enviaFormulario(formulario)">
+    <div class="ui-g">
+      <div class="ui-md-12">
+        <label for="username"><p>Username:</p></label>
+        <input type="text"  ngModel name="usuario" required #inputUsername="ngModel">
+        <small class="error-text" *ngIf="!inputUsername.valid && inputUsername.touched">Campo obrigatório</small>
+      </div>
+      <div class="ui-md-12">
+        <label for="password"><p>Password:</p></label>
+        <input type="password"  ngModel name="senha" required #inputPassword="ngModel">
+        <small class="error-text" *ngIf="!inputPassword.valid && inputPassword.touched">Campo obrigatório</small>
+        <small class="error-text" *ngIf="formulario.invalid && formulario.submitted">Preencha o formulario corretamente!</small>
+        <small class="error-text" *ngIf="incorret">Usuario ou senha invalidos!</small>
+     </div>
+        <button type="submit" class="btn btn-sucess">Entrar</button>
+    </div>
+
+  </form>
+
+</section>

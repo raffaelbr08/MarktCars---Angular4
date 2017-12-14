@@ -1,0 +1,79 @@
+.container-cadastro{
+    background:white;
+    width:100%;
+    min-height: 500px;
+    height:100%;
+    padding:10px;
+    margin:0 auto;
+}
+
+form{
+    height: 100%;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    padding: 5px;
+    background: #0081BD;
+    font-size: 16px;
+    margin: 0 auto;
+    color: white;
+}
+
+form > h2{
+    font-size: 19px;
+    margin: 0px 0px 38px 0px;
+}
+
+form input,select{
+    width:100%;
+    max-width:300px;
+    border-radius:5px;
+    padding:5px;
+    border:1px solid #d4d4d4;
+    background:white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.buttons-form{
+    text-align: left;
+}
+
+.btn-enviar{
+    background:orange;
+    border:none;
+    color:white;
+    padding:10px;
+    font-weight: bold;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.btn-cancelar{
+    background:red;
+    border:none;
+    color:white;
+    padding:10px;
+    font-weight: bold;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+input.ng-invalid.ng-touched{
+    border:1px solid red!important;
+}
+
+select.ng-invalid.ng-touched{
+    border:1px solid red!important;
+}
+
+input.ng-valid.ng-touched{
+    border:1px solid green!important;
+}
+select.ng-valid.ng-touched{
+    border:1px solid green!important;
+}
+
+.error{
+    color:red;
+    font-weight:normal;
+    font-size: 13px;
+}

@@ -1,0 +1,66 @@
+<div class="car">
+  <form novalidate #formularioEdit="ngForm">
+    <div class="car-image">
+      <img src="./assets/car.jpg" alt="">
+      <span class="condicao" *ngIf="!car.indice" [ngClass]="{'cor-carro-novo': car.condicao == 'Novo', 'cor-carro-semi-novo': car.condicao =='SemiNovo', 'cor-carro-usado': car.condicao == 'Usado'}">{{car.condicao}}</span>
+      <select *ngIf="car.indice" name="condicao" class="condicao cond-ipt" required ngModel>
+        <option value="Novo">Novo</option>
+        <option value="SemiNovo">Semi-novo</option>
+        <option value="Usado">Usado</option>
+      </select>
+    </div>
+    <p class="car-preco" *ngIf="!car.indice">Preço: {{car.preco | currency: 'BRL':true}}</p>
+    <label for="preco" *ngIf="car.indice" class="label-edit"> Preço:<br>
+      <input type="text"  name="preco"  required kzMaskCurrency [(ngModel)]="car.preco">
+    </label>
+
+    <p class="car-nome" *ngIf="!car.indice">{{car.nome}}</p>
+    <label for="nome" class="label-edit" *ngIf="car.indice">Nome:<br>
+      <input type="text" name="nome" required [(ngModel)]="car.nome" #inputNome="ngModel">
+    </label>
+
+    <p class="car-fabricacao" *ngIf="!car.indice"><strong>  Fabrição: </strong> {{car.anoFabricacao | date: 'yyyy'}}</p>
+    <label for="dataFabricacao"  class="label-edit" *ngIf="car.indice">Data fabricação:<br>
+      <input type="text" name="anoFabricacao" required [(ngModel)]="car.anoFabricacao" kzMask="99/99/9999">
+    </label>
+
+    <div class="car-details">
+      <div class="ui-g">
+        <div class="ui-g-4">
+            <p><strong>Data de Cadastro:</strong></p>
+            <p>{{car.dataCadastro | date:"dd/MM/yy"}}</p>
+        </div>
+        <div class="ui-g-4">
+            <p><strong>Fabricante:</strong> </p>
+
+            <p *ngIf="!car.indice">{{car.montadora.nome}}</p>
+            <select *ngIf="car.indice" name="montadora" required [(ngModel)]="montadora.nome" >
+              <option selected="true" [value]="montadora.nome">{{montadora.nome}}</option>               -->
+              <option *ngFor="let montadora of listMontadoras" [value]="montadora.nome">
+                {{montadora.nome}}              
+              </option>
+            </select>
+            
+        </div>
+        <div class="ui-g-4">
+            <p><strong>Unico dono?</strong></p>
+
+            <p *ngIf="car.unicoDono && !car.indice">Sim</p> 
+            <p *ngIf="!car.unicoDono && !car.indice">Não</p>   
+            <select name="unicoDono" *ngIf="car.indice" required ngModel>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>           
+            </select>
+        </div>
+      </div>
+    </div>
+    <div class="car-buttons">
+      <button *ngIf="!car.indice" class="btn-car" (click)="editCar(car)">Editar</button>
+      <button *ngIf="!car.indice" class="btn-car del"  (click)="deleteCar(car)"> Deletar</button>
+    </div>
+    <div class="car-buttons-edit">
+        <button *ngIf="car.indice" type="submit" class="btn-car" (click)="salvarEdicao(formularioEdit, car)">Salvar</button>
+        <button *ngIf="car.indice" class="btn-car del" (click)="cancelarEdicao(car)">Cancelar</button>
+    </div>
+  </form>
+</div>

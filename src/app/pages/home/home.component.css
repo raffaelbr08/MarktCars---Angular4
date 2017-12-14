@@ -1,0 +1,41 @@
+.home{
+    text-align: center;
+    padding:120px;
+}
+
+.menu-home{
+    background:#0081BD;
+    width:100%;
+    min-height:300px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+    text-align: left;
+    color:white;
+}
+
+.item-menu{
+    width: 150px;
+    padding: 10px;
+    height: 150px;
+    color:white;
+    border-radius: 3px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 60px;
+}
+
+a{
+    color:#FF9D00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media (max-width: 720px){
+    .home{
+        padding:0px!important;    
+    }
+}
